@@ -1,0 +1,18 @@
+{
+    "name": "particles-fun",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "@types/three": "^0.152.0",
+        "lil-gui": "^0.17.0",
+        "three": "0.148.0"
+    },
+    "devDependencies": {
+        "vite": "^4.0.4"
+    }
+}
