@@ -1,27 +1,42 @@
 html,
 body {
-    background-color: #282828;
-    /* overflow: hidden; */
-    position: relative;
-}
-
-* {
     margin: 0;
     padding: 0;
 }
 
+body {
+    background-color: #282828;
+    position: relative;
+}
+
 #webgl {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 
 #root {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
-    background: red;
-    display: block;
-    opacity: 0.4;
+    box-sizing: border-box;
+    padding: 2rem 20%;
+}
+
+#nav-bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 4rem;
+    background-color: yellow;
+}
+
+.modal {
+    background-color: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(3px);
+    box-sizing: border-box;
+    height: 100%;
+    padding: 3rem;
+    border-radius: 2rem;
 }

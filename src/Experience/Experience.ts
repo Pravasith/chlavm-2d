@@ -6,7 +6,8 @@ import * as THREE from 'three'
 import World from './World/World'
 import Resources from './Utils/Resources'
 import sources from './sources'
-import UserInterface from './UserInterface'
+import UI from './UI/UI'
+import UserInterface from './UI/UI'
 
 export class Experience {
     static instance: Experience
@@ -18,9 +19,12 @@ export class Experience {
     static renderer: Renderer
     static world: World
     static resources: Resources
-    static ui: UserInterface
+    static ui: UI
 
     private constructor(canvas: HTMLCanvasElement) {
+        // UI
+        Experience.ui = UserInterface.init()
+
         // Options
         Experience.canvas = canvas
 
@@ -40,8 +44,6 @@ export class Experience {
         Experience.time.on('tick', () => {
             this.update()
         })
-
-        Experience.ui = new UserInterface()
     }
 
     static getInstance(): Experience {
