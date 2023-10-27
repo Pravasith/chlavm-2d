@@ -10,6 +10,7 @@ export default class UserInterface extends EventEmitter {
 
     root_div: HTMLDivElement | null
     closeButton: HTMLButtonElement | null
+    description: HTMLParagraphElement | null
 
     private constructor() {
         super()
@@ -17,6 +18,7 @@ export default class UserInterface extends EventEmitter {
         UserInterface.state = { showModal: false }
         this.root_div = document.querySelector<HTMLDivElement>('#modal-root')
         this.closeButton = document.querySelector<HTMLButtonElement>('.close-modal-btn')
+        this.description = document.querySelector<HTMLParagraphElement>('.description')
 
         if (this.root_div) this.updateModal()
 
@@ -28,6 +30,7 @@ export default class UserInterface extends EventEmitter {
                 let child = progressButtons[i]
                 child.addEventListener('click', () => {
                     this.trigger('rotate-model', [child.className])
+                    this.updateDescription(child.className)
                 })
             }
         }
@@ -55,5 +58,23 @@ export default class UserInterface extends EventEmitter {
         }
 
         return this.instance
+    }
+
+    private updateDescription(className: string) {
+        const state = {
+            0: `
+              This is a side angle of the model. This is side angle of the model. This is a side angle of the model. This is side angle of the model.
+            `,
+            1: `
+              The guns looks pretty sick, eh? The guns looks pretty sick, eh? Why thank you. I modelled them myself. The guns looks pretty sick, eh? The guns looks pretty sick, eh? Why thank you. I modelled them myself.
+            `,
+            2: `
+              Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot!
+            `,
+        }
+
+        if (this.description) {
+            this.description.innerText = state[Number(className)]
+        }
     }
 }
