@@ -6,25 +6,25 @@ export default class UserInterface {
     static instance: UserInterface
     static state: UIState
 
-    modal: HTMLDivElement | null
+    root_div: HTMLDivElement | null
     closeButton: HTMLButtonElement | null
 
     private constructor() {
         UserInterface.state = { showModal: false }
-        this.modal = document.querySelector<HTMLDivElement>('.modal')
+        this.root_div = document.querySelector<HTMLDivElement>('#modal-root')
         this.closeButton = document.querySelector<HTMLButtonElement>('.close-modal-btn')
 
-        if (this.modal) this.updateModal()
+        if (this.root_div) this.updateModal()
     }
 
     private updateModal() {
         if (this.closeButton) {
             this.closeButton.onclick = e => {
-                if (this.modal) {
+                if (this.root_div) {
                     if (UserInterface.state.showModal) {
-                        this.modal.style.display = 'block'
+                        this.root_div.style.display = 'block'
                     } else {
-                        this.modal.style.display = 'none'
+                        this.root_div.style.display = 'none'
                     }
                 }
             }
