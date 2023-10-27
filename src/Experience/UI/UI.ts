@@ -62,15 +62,9 @@ export default class UserInterface extends EventEmitter {
 
     private updateDescription(className: string) {
         const state = {
-            0: `
-              This is a side angle of the model. This is side angle of the model. This is a side angle of the model. This is side angle of the model.
-            `,
-            1: `
-              The guns looks pretty sick, eh? The guns looks pretty sick, eh? Why thank you. I modelled them myself. The guns looks pretty sick, eh? The guns looks pretty sick, eh? Why thank you. I modelled them myself.
-            `,
-            2: `
-              Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot!
-            `,
+            0: `This is a side angle of the model. This is side angle of the model. This is a side angle of the model. This is side angle of the model. `,
+            1: `The guns looks pretty sick, eh? The guns looks pretty sick, eh? Why thank you. I modelled them myself. The guns looks pretty sick, eh? The guns looks pretty sick, eh? Why thank you. I modelled them myself. `,
+            2: `Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! Look out!! He's gonna shoot! `,
         }
 
         if (this.description) {
