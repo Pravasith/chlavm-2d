@@ -1,5 +1,9 @@
 import { EventEmitter } from '../Utils/EventEmitter'
 
+let i_m = 'cook'
+
+i_m
+
 interface UIState {
     showModal: boolean
 }

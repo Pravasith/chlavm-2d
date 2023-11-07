@@ -1,50 +1,48 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple game</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple game</title>
-</head>
+    <body>
+        <canvas id="webgl"></canvas>
 
-<body>
-  <canvas id="webgl"></canvas>
+        <div id="nav-bar">
+            <div class="logo">
+                <img src="https://chlavm.ca/wp-content/uploads/2021/10/cropped-CHLAVM-Logo.png" />
+            </div>
 
-  <div id="nav-bar">
-    <div class="logo">
-      <img src="https://chlavm.ca/wp-content/uploads/2021/10/cropped-CHLAVM-Logo.png" />
-    </div>
+            <div class="language-options">
+                <ul>
+                    <li>English</li>
+                    <li>Espanol</li>
+                    <li>Francais</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="language-options">
-      <ul>
-        <li>English</li>
-        <li>Espanol</li>
-        <li>Francais</li>
-      </ul>
-    </div>
-  </div>
+        <div id="footer">
+            <p class="description">
+                To create, maintain, operate, and manage an Interactive Virtual Museum which would
+                be the repository and showcase of the history of the Hispanic-Latin American
+                community and its accomplishments and contributions to Canada.
+            </p>
+        </div>
 
-  <div id="footer">
-    <p class="description">
-      To create, maintain, operate, and manage an Interactive Virtual Museum which would
-      be the repository and showcase of the history of the Hispanic-Latin American
-      community and its accomplishments and contributions to Canada.
-    </p>
-  </div>
+        <div id="progress-bar">
+            <button class="0">1</button>
+            <button class="1">2</button>
+            <button class="2">3</button>
+        </div>
 
-  <div id="progress-bar">
-    <button class="0">1</button>
-    <button class="1">2</button>
-    <button class="2">3</button>
-  </div>
-
-  <div id="modal-root">
-    <div class="modal">
-      <button class="close-modal-btn">X</button>
-    </div>
-  </div>
-</body>
-<script src="./index.js" type="module"></script>
-<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-
+        <div id="modal-root">
+            <div class="modal">
+                <button class="close-modal-btn">X</button>
+            </div>
+        </div>
+    </body>
+    <script src="./index.js" type="module"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
 </html>
