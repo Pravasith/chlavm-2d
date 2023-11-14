@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CHLAVM 2D Interactive Site</title>
+    </head>
+
+    <body class="site">
+        <canvas id="webgl"></canvas>
+        <div class="site-container">
+            <header class="site-header">
+                <div class="site-header__logo">
+                    <img
+                        src="images/CHLAVM Logo.svg"
+                        alt="Canadian Hispanic Latin American Virtual Museum" />
+                </div>
+                <!-- .logo -->
+
+                <div class="site-header__nav">
+                    <nav class="main-nav" id="main-nav">
+                        <ul>
+                            <li><a href="#">Lobby</a></li>
+                            <li><a href="#">Init Raymi</a></li>
+                            <li><a href="#">Oroburo de Diabladas</a></li>
+                            <li><a href="#">Condombe</a></li>
+                        </ul>
+                    </nav>
+                    <!-- .main-nav -->
+
+                    <div class="language-selection">
+                        <ul>
+                            <li class="current">EN</li>
+                            <li>SP</li>
+                            <li>FR</li>
+                        </ul>
+                    </div>
+                    <!-- .language-selection -->
+
+                    <div class="main-nav-toggle" id="main-nav-toggle">
+                        <img src="images/icons/Main Nav Toggle.svg" />
+                    </div>
+                    <!-- .main-nav-toggle -->
+                </div>
+                <!-- .site-header__nav -->
+            </header>
+            <!-- .site-header -->
+
+            <div class="info-card">
+                <nav class="info-card__nav">
+                    <ul>
+                        <li id="audio-controls-toggle">
+                            <img
+                                class="info-card__nav-icon"
+                                src="images/icons/Audio Controls.svg"
+                                alt="Audio Controls" />
+                        </li>
+                        <li id="video-section-toggle">
+                            <img
+                                class="info-card__nav-icon"
+                                src="images/icons/Video Icon.svg"
+                                alt="Video Section" />
+                        </li>
+                        <li id="image-gallery-toggle">
+                            <img
+                                class="info-card__nav-icon"
+                                src="images/icons/Image Icon.svg"
+                                alt="Image Gallery" />
+                        </li>
+                        <li id="text-section-toggle">
+                            <img
+                                class="info-card__nav-icon"
+                                src="images/icons/T.svg"
+                                alt="Text Section" />
+                        </li>
+                        <li id="help-section-toggle">
+                            <img
+                                class="info-card__nav-icon"
+                                src="images/icons/Help Icon.svg"
+                                alt="Help Section" />
+                        </li>
+                    </ul>
+                </nav>
+
+                <div id="info-card-toggle">
+                    <img
+                        src="images/icons/Info Card Toggle.svg"
+                        alt="Open card" /><!-- NOTE: Toggle alt text dynamically to say Open card or Close card -->
+                </div>
+
+                <div class="info-card--title"><h2>Inti Raymi</h2></div>
+                <!-- .info-card--title -->
+
+                <div class="info-card__content">
+                    <!-- DYNAMIC CONTENT -->
+
+                    <div class="info-card--section" id="video-gallery"></div>
+                    <!-- .video-gallery -->
+
+                    <div class="info-card--section" id="image-gallery"></div>
+                    <!-- .image-gallery -->
+
+                    <div class="info-card--section" id="text-gallery">
+                        <nav class="text-gallery__nav">
+                            <ul>
+                                <li>History</li>
+                                <li>The Characters</li>
+                                <li>The Suits</li>
+                            </ul>
+                        </nav>
+                        <!-- text-gallery__nav -->
+
+                        <div class="text-gallery__content">
+                            <div class="text-gallery--section-current" id="text-gallery--main">
+                                <p class="gallery-description">
+                                    Inti Raymi is an ancestral Inca festival in honor of the god
+                                    Inti (Sun) celebrated by the Andean indigenous peoples of Peru
+                                    and Ecuador. The clothing of the participants plays an essential
+                                    role not only in this celebration but in their daily lives. The
+                                    garments are notable for their elaborate designs, fabrics,
+                                    colors and accessories that reflect the rich history,
+                                    spirituality and culture of its people. Music and dance
+                                    complement these outfits, creating a unique experience that can
+                                    now also be enjoyed in Canada.
+                                </p>
+                            </div>
+                            <!-- text-gallery--main -->
+
+                            <div class="text-gallery--section" id="text-gallery--history">
+                                <h3>History of the Inti Raymi</h3>
+                                <p>
+                                    The Inti Raymi was established during the reign of Pachacutec
+                                    Inca Yupanqui (1438-1471), in veneration of the Sun god, Inti.
+                                    It was celebrated on the winter solstice and symbolized the
+                                    renewal of the Sun, essential for crops. Cusco and sacred places
+                                    were scenes of rituals, where the emperor made offerings to the
+                                    Sun in a spectacular ceremony with dances and music. However,
+                                    the arrival of the Spanish conquistadors in the 16th century
+                                    caused its ban. Despite this, the Inti Raymi resurfaced in the
+                                    20th century. Today it persists in Peru and in several Andean
+                                    regions of Ecuador and is celebrated by the diasporas of these
+                                    countries in Canada and other places in the world.
+                                </p>
+                            </div>
+                            <!-- .text-gallery--history -->
+
+                            <div class="text-gallery--section" id="text-gallery--characters"></div>
+                            <!-- .text-gallery--characters -->
+
+                            <div class="text-gallery--section" id="text-gallery--suits"></div>
+                            <!-- .text-gallery--suits -->
+                        </div>
+                        <!-- .text-gallery__content -->
+                    </div>
+                    <!-- .text-gallery -->
+
+                    <div class="info-card--section" id="user-guide"></div>
+                    <!-- .help-section -->
+                </div>
+                <!-- .info-card__content -->
+            </div>
+            <!-- .info-card -->
+
+            <canvas class="exhibition"></canvas>
+        </div>
+        <!-- .site-container -->
+
+        <div class="site-footer">
+            <p class="terms-link"><a href="">Terms & Conditions</a></p>
+            <p class="copyright-notice">
+                <a href=""
+                    >Copyright 2023. Canadian Hispanic Latin Americna Museum. All rights reserved</a
+                >
+            </p>
+        </div>
+        <!-- .site-footer -->
+
+        <div class="model-navigation-arrows">
+            <button class="right-arrow-btn">
+                <img class="rotate-180" src="images/icons/Info Card Toggle.svg" alt="" />
+            </button>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+
+    <script src="./index.js" type="module"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+</html>
