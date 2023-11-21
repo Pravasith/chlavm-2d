@@ -4,10 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CHLAVM 2D Interactive Site</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
-
     <body class="site">
         <canvas id="webgl"></canvas>
+
         <div class="site-container">
             <header class="site-header">
                 <div class="site-header__logo">
@@ -46,124 +47,105 @@
             </header>
             <!-- .site-header -->
 
-            <div class="info-card">
+            <nav class="info-card" id="info-card">
+                <div class="info-card--title">
+                    <h2>Inti Raymi</h2>
+                </div>
+                <!-- .info-card--title -->
+
+                <!-- Tab navigation -->
                 <nav class="info-card__nav">
                     <ul>
-                        <li id="audio-controls-toggle">
-                            <img
-                                class="info-card__nav-icon"
-                                src="images/icons/Audio Controls.svg"
-                                alt="Audio Controls" />
+                        <li>
+                            <button class="audio-control">
+                                <img
+                                    class="info-card__nav-icon"
+                                    src="images/icons/Audio-On.svg"
+                                    alt="Audio Controls" />
+                            </button>
                         </li>
-                        <li id="video-section-toggle">
-                            <img
-                                class="info-card__nav-icon"
-                                src="images/icons/Video Icon.svg"
-                                alt="Video Section" />
+                        <li>
+                            <button
+                                class="info-card--link"
+                                onclick="openTab(event, 'info-card--section-1')">
+                                <img
+                                    class="info-card__nav-icon"
+                                    src="images/icons/Text Gallery Icon.svg"
+                                    alt="Text Section" />
+                            </button>
                         </li>
-                        <li id="image-gallery-toggle">
-                            <img
-                                class="info-card__nav-icon"
-                                src="images/icons/Image Icon.svg"
-                                alt="Image Gallery" />
+                        <li>
+                            <button
+                                class="info-card--link"
+                                onclick="openTab(event, 'info-card--section-2')">
+                                <img
+                                    class="info-card__nav-icon"
+                                    src="images/icons/Video Icon.svg"
+                                    alt="Video Section" />
+                            </button>
                         </li>
-                        <li id="text-section-toggle">
-                            <img
-                                class="info-card__nav-icon"
-                                src="images/icons/T.svg"
-                                alt="Text Section" />
+                        <li>
+                            <button
+                                class="info-card--link"
+                                onclick="openTab(event, 'info-card--section-3')">
+                                <img
+                                    class="info-card__nav-icon"
+                                    src="images/icons/Image Icon.svg"
+                                    alt="Image Gallery" />
+                            </button>
                         </li>
-                        <li id="help-section-toggle">
-                            <img
-                                class="info-card__nav-icon"
-                                src="images/icons/Help Icon.svg"
-                                alt="Help Section" />
+                        <li>
+                            <button
+                                class="info-card--link"
+                                onclick="openTab(event, 'info-card--section-4')">
+                                <img
+                                    class="info-card__nav-icon"
+                                    src="images/icons/Help Icon.svg"
+                                    alt="Help Section" />
+                            </button>
+                        </li>
+                        <li>
+                            <button id="info-card-toggle" aria-expanded="false">
+                                <img
+                                    class="info-card__nav-icon"
+                                    src="images/icons/Expand Info Card.svg"
+                                    alt="Expand Content" />
+                            </button>
                         </li>
                     </ul>
                 </nav>
 
-                <div id="info-card-toggle">
-                    <img
-                        src="images/icons/Info Card Toggle.svg"
-                        alt="Open card" /><!-- NOTE: Toggle alt text dynamically to say Open card or Close card -->
+                <!-- Tab content -->
+                <div id="info-card--section-1" class="info-card--section">
+                    <h3 class="info-card--section-title">An Introduction</h3>
+                    <p>
+                        Inti Raymi is an ancestral Inca festival in honor of the god Inti (Sun)
+                        celebrated by the Andean indigenous peoples of Peru and Ecuador. The
+                        clothing of the participants plays an essential role not only in this
+                        celebration but in their daily lives. The garments are notable for their
+                        elaborate designs, fabrics, colors and accessories that reflect the rich
+                        history, spirituality and culture of its people. Music and dance complement
+                        these outfits, creating a unique experience that can now also be enjoyed in
+                        Canada.
+                    </p>
                 </div>
 
-                <div class="info-card--title"><h2>Inti Raymi</h2></div>
-                <!-- .info-card--title -->
-
-                <div class="info-card__content">
-                    <!-- DYNAMIC CONTENT -->
-
-                    <div class="info-card--section" id="video-gallery"></div>
-                    <!-- .video-gallery -->
-
-                    <div class="info-card--section" id="image-gallery"></div>
-                    <!-- .image-gallery -->
-
-                    <div class="info-card--section" id="text-gallery">
-                        <nav class="text-gallery__nav">
-                            <ul>
-                                <li>History</li>
-                                <li>The Characters</li>
-                                <li>The Suits</li>
-                            </ul>
-                        </nav>
-                        <!-- text-gallery__nav -->
-
-                        <div class="text-gallery__content">
-                            <div class="text-gallery--section-current" id="text-gallery--main">
-                                <p class="gallery-description">
-                                    Inti Raymi is an ancestral Inca festival in honor of the god
-                                    Inti (Sun) celebrated by the Andean indigenous peoples of Peru
-                                    and Ecuador. The clothing of the participants plays an essential
-                                    role not only in this celebration but in their daily lives. The
-                                    garments are notable for their elaborate designs, fabrics,
-                                    colors and accessories that reflect the rich history,
-                                    spirituality and culture of its people. Music and dance
-                                    complement these outfits, creating a unique experience that can
-                                    now also be enjoyed in Canada.
-                                </p>
-                            </div>
-                            <!-- text-gallery--main -->
-
-                            <div class="text-gallery--section" id="text-gallery--history">
-                                <h3>History of the Inti Raymi</h3>
-                                <p>
-                                    The Inti Raymi was established during the reign of Pachacutec
-                                    Inca Yupanqui (1438-1471), in veneration of the Sun god, Inti.
-                                    It was celebrated on the winter solstice and symbolized the
-                                    renewal of the Sun, essential for crops. Cusco and sacred places
-                                    were scenes of rituals, where the emperor made offerings to the
-                                    Sun in a spectacular ceremony with dances and music. However,
-                                    the arrival of the Spanish conquistadors in the 16th century
-                                    caused its ban. Despite this, the Inti Raymi resurfaced in the
-                                    20th century. Today it persists in Peru and in several Andean
-                                    regions of Ecuador and is celebrated by the diasporas of these
-                                    countries in Canada and other places in the world.
-                                </p>
-                            </div>
-                            <!-- .text-gallery--history -->
-
-                            <div class="text-gallery--section" id="text-gallery--characters"></div>
-                            <!-- .text-gallery--characters -->
-
-                            <div class="text-gallery--section" id="text-gallery--suits"></div>
-                            <!-- .text-gallery--suits -->
-                        </div>
-                        <!-- .text-gallery__content -->
-                    </div>
-                    <!-- .text-gallery -->
-
-                    <div class="info-card--section" id="user-guide"></div>
-                    <!-- .help-section -->
+                <div id="info-card--section-2" class="info-card--section">
+                    <h3 class="info-card--section-title">Video Gallery</h3>
+                    <p>Content for Section 2...</p>
                 </div>
-                <!-- .info-card__content -->
-            </div>
-            <!-- .info-card -->
 
-            <canvas class="exhibition"></canvas>
+                <div id="info-card--section-3" class="info-card--section">
+                    <h3 class="info-card--section-title">Image Gallery</h3>
+                    <p>Content for Section 3...</p>
+                </div>
+
+                <div id="info-card--section-4" class="info-card--section">
+                    <h3 class="info-card--section-title">User Guide/Info</h3>
+                    <p>Content for Section 4...</p>
+                </div>
+            </nav>
         </div>
-        <!-- .site-container -->
 
         <div class="site-footer">
             <p class="terms-link"><a href="">Terms & Conditions</a></p>
@@ -181,7 +163,7 @@
             </button>
         </div>
 
-        <script src="app.js"></script>
+        <script src="2Di.js"></script>
     </body>
 
     <script src="./index.js" type="module"></script>
